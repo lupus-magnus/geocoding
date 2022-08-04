@@ -1,0 +1,31 @@
+0. Boas práticas em padrão REST
+https://www.brunobrito.net.br/padrao-rest/
+Por enquanto, minha sugestão é fazer uma rota /paths e passar uma lista de addresses como um header. addresses: [...]
+
+> Usar o char ";" como delimitador e estourar erro caso haja esse em algum dos endereços me parece uma boa ideia.
+
+1. Pegar latitude e longitude
+
+- Google Maps API: https://developers.google.com/maps/documentation/geocoding/start
+
+https://developers.google.com/maps/documentation/geocoding/overview?hl=pt-br#geocoding-requests
+
+
+
+
+- Sample Addresses:
+i. Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003
+ii. Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200
+iii. Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030
+
+
+
+2. Pegar as distâncias dos pontos
+
+- A distância entre dois pontos, com latitude e longitude, basta ser feita por Pitagoras.
+
+- Pegar todas as distâncias ponto a ponto significa se tratar d um exercício de combinatória.
+
+https://stackoverflow.com/questions/37075180/combinations-of-size-n-from-an-array
+
+https://gist.github.com/axelpale/3118596
