@@ -19,13 +19,16 @@ ii. Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200
 iii. Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030
 
 
-
-2. Pegar as distâncias dos pontos
-
-- A distância entre dois pontos, com latitude e longitude, basta ser feita por Pitagoras.
-
 - Pegar todas as distâncias ponto a ponto significa se tratar d um exercício de combinatória.
 
 https://stackoverflow.com/questions/37075180/combinations-of-size-n-from-an-array
 
 https://gist.github.com/axelpale/3118596
+
+
+2. Pegar as distâncias dos pontos
+
+- A distância entre dois pontos, com latitude e longitude, basta ser feita por Pitagoras.
+- EDIT: Na realidade, uma fórmula mais acurada para medir distâncias em esferas é a fórmula de haversine, usada para navegação marítima.
+
+

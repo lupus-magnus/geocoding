@@ -10,8 +10,8 @@ describe("Addresses Parser Tests", () => {
   it("Should correctly split the input string into an array of addresses", () => {
     const expectedOutcome = [
       "Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003",
-      " Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200",
-      " Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030",
+      "Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200",
+      "Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030",
     ];
     const array = AddressesParserService.execute(correctAddressesInput);
     expect(array).toEqual(expectedOutcome);
