@@ -1,14 +1,10 @@
+import { DistancesController } from "@controllers/DistancesController";
 import express from "express";
-
-// import { LoggerService } from "@services/LoggerService";
 
 const app = express();
 const port = 8000;
 
-app.get("/distances", (req, res) => {
-  //   LoggerService.execute();
-  return res.json({ hello: "world" });
-});
+app.get("/distances", DistancesController.get);
 
 console.log("running on", port);
 app.listen(port);

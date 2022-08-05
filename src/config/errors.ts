@@ -1,9 +1,9 @@
-interface CustomErrorType extends Error {
+export interface CustomErrorType extends Error {
   code: string;
   httpStatus: number;
 }
 
-type CustomErrorCodes = "min.addresses";
+type CustomErrorCodes = "default" | "min.addresses" | "missing.header";
 
 export const errors: Record<CustomErrorCodes, CustomErrorType> = {
   "min.addresses": {
@@ -12,6 +12,18 @@ export const errors: Record<CustomErrorCodes, CustomErrorType> = {
       "It should receive three or more addresses for performing the distances calculations",
     code: "min.addresses",
     httpStatus: 400,
+  },
+  "missing.header": {
+    name: "Addresses header not received",
+    message: "Please inform the addresses through the request headers.",
+    code: "missing.header",
+    httpStatus: 400,
+  },
+  default: {
+    name: "Unexpected Error",
+    message: "Unexpected Error.",
+    code: "default",
+    httpStatus: 500,
   },
 };
 
@@ -25,5 +37,6 @@ export class CustomError implements CustomErrorType {
     this.code = code;
     this.name = errors[code].name;
     this.httpStatus = errors[code].httpStatus;
+    console.log(this);
   }
 }

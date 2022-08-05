@@ -19,12 +19,13 @@ describe("Addresses Parser Tests", () => {
 
   it("Should throw an error when receiving less than three addresses", () => {
     expect(() => {
-      try {
-        AddressesParserService.execute(notEnoughAddressesInput);
-      } catch (e) {
-        console.log(e);
-        throw e;
-      }
+      AddressesParserService.execute(notEnoughAddressesInput);
+    }).toThrow();
+  });
+
+  it("Should throw an error if the addresses header was not provided", () => {
+    expect(() => {
+      AddressesParserService.execute(undefined);
     }).toThrow();
   });
 });
