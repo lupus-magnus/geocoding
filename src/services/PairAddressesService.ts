@@ -5,6 +5,7 @@ import { k_combinations } from "../utils/combinations";
 export class PairAddressesService {
   static execute = (addresses: GeocodingServiceDTO[]): AddressPairDTO[] => {
     const pairs = k_combinations(addresses, 2) as AddressPairDTO[];
+    console.log(JSON.stringify(pairs));
     return pairs;
   };
 }
