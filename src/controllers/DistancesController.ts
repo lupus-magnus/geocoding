@@ -1,6 +1,11 @@
 import { Request, Response } from "express";
 
-import { AddressesParserService, GeocodingService } from "@services/index";
+import {
+  AddressesParserService,
+  GeocodingService,
+  HaversineService,
+  PairAddressesService,
+} from "@services/index";
 
 import { errors } from "src/config/errors";
 
@@ -11,12 +16,14 @@ export class DistancesController {
       const addressesArray = AddressesParserService.execute(
         addresses as string
       );
-      const results = await Promise.all(
+      const addressesWithCoordinates = await Promise.all(
         addressesArray.map(
           async (address) => await GeocodingService.execute(address)
         )
       );
-      return res.status(200).json({ results });
+      const pairs = PairAddressesService.execute(addressesWithCoordinates);
+      const distances = HaversineService.execute(pairs);
+      return res.status(200).json({ distances });
     } catch (error) {
       if (error.code) {
         return res.status(errors[error.code].httpStatus).json(error);
