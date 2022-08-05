@@ -3,9 +3,21 @@ export interface CustomErrorType extends Error {
   httpStatus: number;
 }
 
-type CustomErrorCodes = "default" | "min.addresses" | "missing.header";
+type CustomErrorCodes =
+  | "default"
+  | "min.addresses"
+  | "missing.header"
+  | "specificity.error"
+  | "not.found"
+  | "axios.error";
 
 export const errors: Record<CustomErrorCodes, CustomErrorType> = {
+  default: {
+    name: "Unexpected Error",
+    message: "Unexpected Error.",
+    code: "default",
+    httpStatus: 500,
+  },
   "min.addresses": {
     name: "Less than 3 addresses received",
     message:
@@ -19,10 +31,24 @@ export const errors: Record<CustomErrorCodes, CustomErrorType> = {
     code: "missing.header",
     httpStatus: 400,
   },
-  default: {
-    name: "Unexpected Error",
-    message: "Unexpected Error.",
-    code: "default",
+  "specificity.error": {
+    name: "Specificity error",
+    message:
+      "At least one address encountered multiple results. Please, be as specific as possible.",
+    code: "specificity.error",
+    httpStatus: 400,
+  },
+  "not.found": {
+    name: "Address not found",
+    message:
+      "One or more of the informed addresses were not found. Please, double-check for any typing errors.",
+    code: "not.found",
+    httpStatus: 404,
+  },
+  "axios.error": {
+    name: "Error on Geocoding API request",
+    message: "The request for Google's Geocoding API did not succeed.",
+    code: "axios.error",
     httpStatus: 500,
   },
 };

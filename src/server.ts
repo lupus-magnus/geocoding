@@ -1,5 +1,8 @@
-import { DistancesController } from "@controllers/DistancesController";
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
+import { DistancesController } from "@controllers/DistancesController";
 
 const app = express();
 const port = 8000;
