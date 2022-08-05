@@ -1,25 +1,6 @@
 import axios from "axios";
 import { CustomError } from "src/config/errors";
-
-type GeocodingResponseResultsType = {
-  formatted_address: string;
-  geometry: {
-    location: {
-      lat: number;
-      lng: number;
-    };
-  };
-};
-
-type GeocodingResponseType = {
-  results: GeocodingResponseResultsType[];
-};
-
-type GeocodingServiceDTO = {
-  formatted_address: string;
-  lat: number;
-  long: number;
-};
+import { GeocodingResponseType, GeocodingServiceDTO } from "src/interfaces";
 
 export class GeocodingService {
   static execute = async (address: string): Promise<GeocodingServiceDTO> => {

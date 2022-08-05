@@ -30,5 +30,7 @@ https://gist.github.com/axelpale/3118596
 
 - A distância entre dois pontos, com latitude e longitude, basta ser feita por Pitagoras.
 - EDIT: Na realidade, uma fórmula mais acurada para medir distâncias em esferas é a fórmula de haversine, usada para navegação marítima.
-
+https://pt.wikipedia.org/wiki/F%C3%B3rmula_de_haversine
+https://www.movable-type.co.uk/scripts/latlong.html
+https://www.sisense.com/blog/latitude-longitude-distance-calculation-explained/
 
