@@ -5,6 +5,7 @@ import {
   GeocodingService,
   HaversineService,
   PairAddressesService,
+  FindExtremesService,
 } from "@services/index";
 
 import { errors } from "src/config/errors";
@@ -23,7 +24,8 @@ export class DistancesController {
       );
       const pairs = PairAddressesService.execute(addressesWithCoordinates);
       const distances = HaversineService.execute(pairs);
-      return res.status(200).json({ distances });
+      const response = FindExtremesService.execute(distances);
+      return res.status(200).json(response);
     } catch (error) {
       if (error.code) {
         return res.status(errors[error.code].httpStatus).json(error);

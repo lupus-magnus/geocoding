@@ -63,6 +63,5 @@ export class CustomError implements CustomErrorType {
     this.code = code;
     this.name = errors[code].name;
     this.httpStatus = errors[code].httpStatus;
-    // console.log(this);
   }
 }

@@ -19,7 +19,11 @@ export class HaversineService {
       const distance = Number(
         (haversine(startingPoint, endingPoint) as unknown as number).toFixed(2)
       );
-      return { address1, address2, distance };
+      return {
+        address1: address1.formatted_address,
+        address2: address2.formatted_address,
+        distance,
+      };
     });
     console.log(JSON.stringify(pairsWithDistance));
     return pairsWithDistance;
