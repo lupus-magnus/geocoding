@@ -13,7 +13,7 @@
 <hr />
 
 ##### Synopsis:
-  Ever wondered how far away you are from your friends or even that amazing japanese restaurant you want to visit? Ever had to decide who was the most suitable person for that last moment shopping at the market? Well, no more. With Closer, you can rest assure that all that information is merely one click and one address away.
+  Ever wondered how far away you are from your friends or even that amazing japanese restaurant you want to visit? Ever had to decide who was the most suitable person for that last moment trip to the market? Well, no more. With Closer, you can rest assure that all that information is merely one click and one address away.
 
 
 The closer the better! 
