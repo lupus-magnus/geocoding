@@ -13,14 +13,14 @@
 <hr />
 
 ##### Synopsis:
-  Ever wondered how far away you are from your friends or even that amazing japanese restaurant you want to visit? Ever had to decide who was the friend that was nearest to the market for those final arrangements in the last moment? Well, no more. With Closer, you can rest assure that all that information is merely one click and one address away.
+  Ever wondered how far away you are from your friends or even that amazing japanese restaurant you want to visit? Ever had to decide who was the most suitable person for that last moment shopping at the market? Well, no more. With Closer, you can rest assure that all that information is merely one click and one address away.
 
 
 The closer the better! 
 
 ##### Description:
 
-Closer is a project developed in TypeScript, in the Node + Express ecosystem. Through a RESTful API, it receives three or more addresses and proceeds to process them, calculating the distances between each one.
+Closer is a project developed in TypeScript, in the Node + Express ecosystem. Through a RESTful API, it receives three or more addresses and proceeds to process them, calculating the distances between each one. It returns you a list of the distances between each pair of locations, and also the closest and farthest pair. 
 
 <br><br>
 
