@@ -12,19 +12,17 @@ import { errors } from "src/config/errors";
 
 export class DistancesController {
   static get = async (req: Request, res: Response) => {
-    const { addresses } = req.headers;
+    const { addresses } = req.headers as { addresses: string };
     try {
-      const addressesArray = AddressesParserService.execute(
-        addresses as string
+      const addressesArray = AddressesParserService.execute(addresses);
+      const addressesWithCoordinates = await GeocodingService.execute(
+        addressesArray
       );
-      const addressesWithCoordinates = await Promise.all(
-        addressesArray.map(
-          async (address) => await GeocodingService.execute(address)
-        )
+      const addressPairs = PairAddressesService.execute(
+        addressesWithCoordinates
       );
-      const pairs = PairAddressesService.execute(addressesWithCoordinates);
-      const distances = HaversineService.execute(pairs);
-      const response = FindExtremesService.execute(distances);
+      const addressPairsWithDistances = HaversineService.execute(addressPairs);
+      const response = FindExtremesService.execute(addressPairsWithDistances);
       return res.status(200).json(response);
     } catch (error) {
       if (error.code) {
