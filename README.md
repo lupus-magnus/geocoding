@@ -52,7 +52,14 @@ Closer is a project developed in TypeScript, in the Node + Express ecosystem. Th
 
 - GET /distances: Receives the addresses parameter via header, which is a string of addresses separated by ';'. It then returns a list of the distances between those addresses, as well as the longest and closest ones.
 
-#### 🔥 The Extra Mile:
+### 💻 How to use it:
 
-- [x] Implement an efficient error handling approach for semantic http responses.
-- [ ] Document the API through Swagger.
+For running this project, you will need to have Node installed and a valid Google API key for using their Geocoding API.
+
+For the project to connect with the geocoding API, you will need to have a `.env` file with the following line:
+```
+API_KEY=<your_google_api_key_here>
+```
+After that, you're all set. Run `yarn` for installing the dependencies and `yarn dev` for running the project.
+
+Good hacking! 👊 🔥
