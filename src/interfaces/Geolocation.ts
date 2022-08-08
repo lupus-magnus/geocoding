@@ -10,6 +10,7 @@ export type GeocodingResponseResultsType = {
 
 export type GeocodingResponseType = {
   results: GeocodingResponseResultsType[];
+  status?: string;
 };
 
 export type GeocodingServiceDTO = {

@@ -6,10 +6,11 @@ export interface CustomErrorType extends Error {
 type CustomErrorCodes =
   | "default"
   | "min.addresses"
-  | "missing.header"
+  | "missing.addresses"
   | "specificity.error"
   | "not.found"
-  | "axios.error";
+  | "axios.error"
+  | "api.unauthorized";
 
 export const errors: Record<CustomErrorCodes, CustomErrorType> = {
   default: {
@@ -25,10 +26,10 @@ export const errors: Record<CustomErrorCodes, CustomErrorType> = {
     code: "min.addresses",
     httpStatus: 400,
   },
-  "missing.header": {
-    name: "Addresses header not received",
-    message: "Please inform the addresses through the request headers.",
-    code: "missing.header",
+  "missing.addresses": {
+    name: "The addresses query param was not received",
+    message: "Please inform the addresses as a query param.",
+    code: "missing.addresses",
     httpStatus: 400,
   },
   "specificity.error": {
@@ -51,6 +52,12 @@ export const errors: Record<CustomErrorCodes, CustomErrorType> = {
     code: "axios.error",
     httpStatus: 500,
   },
+  "api.unauthorized": {
+    name: "Invalid API key",
+    message: "The api key for google's geocoding service is invalid.",
+    code: "api.unauthorized",
+    httpStatus: 401,
+  },
 };
 
 export class CustomError implements CustomErrorType {
@@ -63,5 +70,6 @@ export class CustomError implements CustomErrorType {
     this.code = code;
     this.name = errors[code].name;
     this.httpStatus = errors[code].httpStatus;
+    // console.log(this);
   }
 }

@@ -7,6 +7,9 @@ export class GeocodingService {
     addressesArray: string[]
   ): Promise<GeocodingServiceDTO[]> => {
     const key = process.env.API_KEY;
+    if (!key) {
+      throw new CustomError("api.unauthorized");
+    }
     const apiBaseUrl = "https://maps.googleapis.com/maps/api/geocode/json";
 
     const addressesWithCoordinates = await Promise.all(
