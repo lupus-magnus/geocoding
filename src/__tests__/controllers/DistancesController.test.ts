@@ -7,7 +7,6 @@ describe("Route GET /distances Tests", () => {
     const { body, statusCode } = (await request(app).get(
       "/distances"
     )) as Response;
-    console.log(body);
 
     expect(statusCode).toBe(400);
     expect(body.code).toBe("missing.header");
@@ -19,7 +18,6 @@ describe("Route GET /distances Tests", () => {
     const { body, statusCode } = await request(app)
       .get("/distances")
       .set("addresses", mockAddressHeader);
-    console.log(body);
 
     expect(statusCode).toBe(400);
     expect(body.code).toBe("min.addresses");

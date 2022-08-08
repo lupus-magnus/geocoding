@@ -6,7 +6,6 @@ export class GeocodingService {
   static execute = async (
     addressesArray: string[]
   ): Promise<GeocodingServiceDTO[]> => {
-    console.log("Executing the GeocodingService!");
     const key = process.env.API_KEY;
     const apiBaseUrl = "https://maps.googleapis.com/maps/api/geocode/json";
 
