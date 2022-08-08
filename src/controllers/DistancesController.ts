@@ -12,7 +12,8 @@ import { errors } from "../../src/config/errors";
 
 export class DistancesController {
   static get = async (req: Request, res: Response) => {
-    const { addresses } = req.headers as { addresses: string };
+    const { addresses } = req.query as { addresses: string };
+
     try {
       const addressesArray = AddressesParserService.execute(addresses);
       const addressesWithCoordinates = await GeocodingService.execute(
