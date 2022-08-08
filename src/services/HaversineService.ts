@@ -25,7 +25,7 @@ export class HaversineService {
         distance,
       };
     });
-    console.log(JSON.stringify(pairsWithDistance));
+
     return pairsWithDistance;
   };
 }

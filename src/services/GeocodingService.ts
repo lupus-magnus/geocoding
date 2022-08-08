@@ -1,11 +1,12 @@
 import axios from "axios";
-import { CustomError } from "src/config/errors";
+import { CustomError, errors } from "../../src/config/errors";
 import { GeocodingResponseType, GeocodingServiceDTO } from "src/interfaces";
 
 export class GeocodingService {
   static execute = async (
     addressesArray: string[]
   ): Promise<GeocodingServiceDTO[]> => {
+    console.log("Executing the GeocodingService!");
     const key = process.env.API_KEY;
     const apiBaseUrl = "https://maps.googleapis.com/maps/api/geocode/json";
 
@@ -15,6 +16,7 @@ export class GeocodingService {
         const endpoint = `${apiBaseUrl}?address=${query}&key=${key}`;
         try {
           const { data } = await axios.get<GeocodingResponseType>(endpoint);
+
           if (data.results.length > 1)
             throw new CustomError("specificity.error");
           if (data.results.length === 0) throw new CustomError("not.found");
@@ -22,8 +24,12 @@ export class GeocodingService {
           const { formatted_address, geometry } = result;
           const { lat, lng: long } = geometry.location;
           return { formatted_address, lat, long };
-        } catch {
-          throw new CustomError("axios.error");
+        } catch (e) {
+          if (!!e.code) {
+            throw new CustomError(e.code);
+          } else {
+            throw new CustomError("axios.error");
+          }
         }
       })
     );

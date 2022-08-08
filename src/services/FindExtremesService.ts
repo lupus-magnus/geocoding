@@ -1,8 +1,4 @@
-import {
-  MeasuredAddressPairsDTO,
-  SingleMeasuredAddressPairDTO,
-  ApiResponseType,
-} from "src/interfaces";
+import { MeasuredAddressPairsDTO, ApiResponseType } from "src/interfaces";
 
 export class FindExtremesService {
   static execute = (pairs: MeasuredAddressPairsDTO): ApiResponseType => {

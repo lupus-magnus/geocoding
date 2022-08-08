@@ -41,7 +41,7 @@ export const errors: Record<CustomErrorCodes, CustomErrorType> = {
   "not.found": {
     name: "Address not found",
     message:
-      "One or more of the informed addresses were not found. Please, double-check for any typing errors.",
+      "One or more of the informed addresses were not found. Please, double-check your input for any typing errors.",
     code: "not.found",
     httpStatus: 404,
   },
