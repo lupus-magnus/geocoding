@@ -1,7 +1,7 @@
 <h1 align="center">🌐 Closer | Geocoding API </h1>
 <h1 align="center">
 <img src="https://img.shields.io/static/v1?label=TypeScript&message=language&color=green&style=for-the-badge&logo=typescript"/>
-<img src="https://img.shields.io/static/v1?label=Node&message=framework&color=blue&style=for-the-badge&logo=nodedotjs"/>
+<img src="https://img.shields.io/static/v1?label=Express&message=framework&color=blue&style=for-the-badge&logo=express"/>
 <img src="https://img.shields.io/static/v1?label=Jest&message=unit+tests&color=blue&style=for-the-badge&logo=jest"/>
 
   
