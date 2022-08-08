@@ -60,6 +60,6 @@ For the project to connect with the geocoding API, you will need to have a `.env
 ```
 API_KEY=<your_google_api_key_here>
 ```
-After that, you're all set. Run `yarn` for installing the dependencies and `yarn dev` for running the project.
+After that, you're all set. Run `yarn` for installing the dependencies and `yarn dev` for running the project. For running the tests, a simple `yarn test` will do the trick as well.
 
 Good hacking! 👊 🔥
