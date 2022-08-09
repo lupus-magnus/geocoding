@@ -24,19 +24,28 @@ Closer is a project developed in TypeScript, in the Node + Express ecosystem. Th
 
 <br><br>
 
-##### Want to check it out by yourself? (Not deployed yet)
+##### Want to check it out by yourself?
 
 <h2 align="center" >
-<a href="https://iboox.herokuapp.com/"><img src="https://media.indiedb.com/images/articles/1/159/158317/auto/20140509082052-Button_play.png" height="64" />
+<a href="https://closer-geocoding.herokuapp.com/"><img src="https://media.indiedb.com/images/articles/1/159/158317/auto/20140509082052-Button_play.png" height="64" />
 </h2></a>
 <hr />
 
 ### 🧠 Project Responsabilities:
 
+- [x] Connect with an external service through an API
+- [x] Receive three addresses and get their coordinates
+- [x] Calculate the distance between each pair of addresses
+- [x] Highlight both the nearest and farthest distances in the array
+- [x] Assure code quality and maintenability through unit tests coverage.
+
+### 🔥 The Extra Mile:
+
 - [x] Configure project from scratch with TypeScript
 - [x] Use the MVC model for maintaining good code practices
-- [x] Configure env for using a restrict API, without exposing sensible data
-- [x] Assure code quality and maintenability through unit tests coverage.
+- [x] Configure .env for using a restrict API, without exposing sensible data
+- [x] Documenting the application through Swagger
+- [x] Deploying the application to Heroku for a smoother testing experience
 
 ### 🧰 Technologies:
 
@@ -50,7 +59,7 @@ Closer is a project developed in TypeScript, in the Node + Express ecosystem. Th
 
 ### 🎯 Endpoints:
 
-- GET /distances: Receives the addresses parameter via header, which is a string of addresses separated by ';'. It then returns a list of the distances between those addresses, as well as the longest and closest ones.
+- GET /distances: Receives the query param "addresses", which is a string of addresses separated by ';'. It then returns a list of the distances between those addresses, as well as the farthest and nearest ones.
 
 ### 💻 How to use it:
 
