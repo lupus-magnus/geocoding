@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Closer | Geocoding API",
+    "description": "This API receives three or more addresses and returns a list of the distances between each pair of locations, highlighting the nearest and farthest neighboors.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/distances": {
+      "get": {
+        "summary": "Returns a list of distances between each point, highlighting the extremes.",
+        "description": "Returns a list of distances between each point, highlighting the extremes.",
+        "parameters": [
+          {
+            "name": "addresses",
+            "in": "query",
+            "description": "List of addresses, separated by ';'.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "accept": "application/json"
+            },
+            "example": "Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003; Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200; Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "distances": [
+                      {
+                        "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                        "address2": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                        "distance": 1.25
+                      },
+                      {
+                        "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                        "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                        "distance": 5.98
+                      },
+                      {
+                        "address1": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                        "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                        "distance": 5.5
+                      }
+                    ],
+                    "farthest": {
+                      "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                      "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                      "distance": 5.98
+                    },
+                    "nearest": {
+                      "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                      "address2": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                      "distance": 1.25
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
