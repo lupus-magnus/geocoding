@@ -8,7 +8,7 @@ import {
   FindExtremesService,
 } from "@services/index";
 
-import { errors } from "../../src/config/errors";
+import { errors } from "../config/errors";
 
 export class DistancesController {
   static get = async (req: Request, res: Response) => {

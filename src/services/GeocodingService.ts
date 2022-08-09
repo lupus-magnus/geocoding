@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CustomError, errors } from "../../src/config/errors";
+import { CustomError } from "../config/errors";
 import { GeocodingResponseType, GeocodingServiceDTO } from "src/interfaces";
 
 export class GeocodingService {
