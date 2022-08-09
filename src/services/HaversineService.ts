@@ -1,7 +1,15 @@
 import haversine from "haversine";
 
-import { AddressPairDTO, MeasuredAddressPairsDTO } from "../interfaces";
+import {
+  AddressPairDTO,
+  AddressWithCoordinatesDTO,
+  MeasuredAddressPairsDTO,
+} from "../interfaces";
 
+type AddressPairWithCoordinatesDTO = [
+  AddressWithCoordinatesDTO,
+  AddressWithCoordinatesDTO
+];
 export class HaversineService {
   static execute = (
     addressPairs: AddressPairDTO[]
@@ -19,11 +27,18 @@ export class HaversineService {
       const distance = Number(
         (haversine(startingPoint, endingPoint) as unknown as number).toFixed(2)
       );
-      return {
-        address1: address1.formatted_address,
-        address2: address2.formatted_address,
-        distance,
-      };
+      const addresses: AddressPairWithCoordinatesDTO = [
+        {
+          label: address1.formatted_address,
+          coordinates: { lat: address1.lat, lon: address1.long },
+        },
+        {
+          label: address2.formatted_address,
+          coordinates: { lat: address2.lat, lon: address2.long },
+        },
+      ];
+
+      return { addresses, distance };
     });
 
     return pairsWithDistance;

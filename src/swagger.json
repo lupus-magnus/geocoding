@@ -9,7 +9,7 @@
     "/distances": {
       "get": {
         "summary": "Returns a list of distances between each point, highlighting the extremes.",
-        "description": "Returns a list of distances between each point, highlighting the extremes.",
+        "description": "Returns a list of distances between each point, highlighting the extremes. The distances are given in kilometers (km).",
         "parameters": [
           {
             "name": "addresses",
@@ -33,29 +33,99 @@
                   "example": {
                     "distances": [
                       {
-                        "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
-                        "address2": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                        "addresses": [
+                          {
+                            "label": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                            "coordinates": {
+                              "lat": -22.8973551,
+                              "lon": -43.1802782
+                            }
+                          },
+                          {
+                            "label": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                            "coordinates": {
+                              "lat": -22.9039608,
+                              "lon": -43.1703536
+                            }
+                          }
+                        ],
                         "distance": 1.25
                       },
                       {
-                        "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
-                        "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                        "addresses": [
+                          {
+                            "label": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                            "coordinates": {
+                              "lat": -22.8973551,
+                              "lon": -43.1802782
+                            }
+                          },
+                          {
+                            "label": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                            "coordinates": {
+                              "lat": -22.9507468,
+                              "lon": -43.1876527
+                            }
+                          }
+                        ],
                         "distance": 5.98
                       },
                       {
-                        "address1": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
-                        "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                        "addresses": [
+                          {
+                            "label": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                            "coordinates": {
+                              "lat": -22.9039608,
+                              "lon": -43.1703536
+                            }
+                          },
+                          {
+                            "label": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                            "coordinates": {
+                              "lat": -22.9507468,
+                              "lon": -43.1876527
+                            }
+                          }
+                        ],
                         "distance": 5.5
                       }
                     ],
                     "farthest": {
-                      "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
-                      "address2": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                      "addresses": [
+                        {
+                          "label": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                          "coordinates": {
+                            "lat": -22.8973551,
+                            "lon": -43.1802782
+                          }
+                        },
+                        {
+                          "label": "R. Dezenove de Fevereiro, 34 - Botafogo, Rio de Janeiro - RJ, 22280-030, Brazil",
+                          "coordinates": {
+                            "lat": -22.9507468,
+                            "lon": -43.1876527
+                          }
+                        }
+                      ],
                       "distance": 5.98
                     },
                     "nearest": {
-                      "address1": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
-                      "address2": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                      "addresses": [
+                        {
+                          "label": "Av. Rio Branco, 1 - Centro, Rio de Janeiro - RJ, 20090-003, Brazil",
+                          "coordinates": {
+                            "lat": -22.8973551,
+                            "lon": -43.1802782
+                          }
+                        },
+                        {
+                          "label": "Praça Mal. Âncora, 122 - Centro, Rio de Janeiro - RJ, 20021-200, Brazil",
+                          "coordinates": {
+                            "lat": -22.9039608,
+                            "lon": -43.1703536
+                          }
+                        }
+                      ],
                       "distance": 1.25
                     }
                   }

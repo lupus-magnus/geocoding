@@ -1,11 +1,12 @@
-export type SingleMeasuredAddressPairDTO = {
-  address1: string;
-  address2: string;
-  distance: number;
+export type AddressWithCoordinatesDTO = {
+  label: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
 };
 
 export type MeasuredAddressPairsDTO = {
-  address1: string;
-  address2: string;
+  addresses: [AddressWithCoordinatesDTO, AddressWithCoordinatesDTO];
   distance: number;
 }[];
